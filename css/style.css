@@ -1,0 +1,116 @@
+body {
+    font-family:  'Alegreya Sans SC', serif; 
+    background-image: url('../images/concrete_seamless.png'); 
+    background-color: #f1f1f1;
+}
+
+header {
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+}
+
+.nav_links {
+    display: flex; 
+    flex-direction: column;
+}
+
+a { 
+    color: blue;
+}
+
+.pricing {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card > header {
+    background: #288088; 
+    border: 2px solid #45ADAD; 
+    padding: 20px 0px 20px 0px; 
+    border-top-left-radius: 7px; 
+    border-top-right-radius: 7px;
+}
+
+.card {
+    display: flex; 
+    flex-basis: 450px; 
+    flex-direction: column;
+}
+
+.gallery img {
+    border: 10px solid #50C7C7; 
+    margin: 10px; 
+    width: 300px;
+}
+.gallery {
+    display: flex; 
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+#logo {
+    animation-name: animation_logo; 
+    animation-duration: 5s;
+}
+
+@keyframes animation_logo {
+    from { 
+        width: 50px;
+        opacity: 0;
+    }
+    to {
+       width: 425px; 
+       opacity: 1; 
+    }
+}
+
+@media screen and (min-width: 850px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .nav_links {
+        flex-direction: row;
+    }
+    body > header {
+        position: sticky;
+        top: 0;
+    }
+    .card {
+        flex-basis: 250px;
+    }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    #logo {
+        animation-delay: -42s;
+    }
+}
+
+@media print{
+    body {
+        background-image: none;
+    } 
+    .nav_links {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .pricing {
+        flex-wrap: nowrap;
+        align-items: flex-end;
+    }
+    .card {
+        border: 2px solid #45ADDD; 
+        flex-basis: 250px;
+    }
+    #gallery {
+        display: none;
+    }
+    .card > ul li:nth-child(odd)::before, .card > ul li:nth-child(even)::after {
+        content: "👍";
+    }
+}
