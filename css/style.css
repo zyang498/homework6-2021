@@ -79,6 +79,7 @@ a {
     body > header {
         position: sticky;
         top: 0;
+        width: 100%;
     }
     .card {
         flex-basis: 250px;
@@ -87,7 +88,7 @@ a {
 
 @media screen and (prefers-reduced-motion: reduce) {
     #logo {
-        animation-delay: -42s;
+        animation-delay: -20s;
     }
 }
 
@@ -95,6 +96,9 @@ a {
     body {
         background-image: none;
     } 
+    nav {
+        width: 100%;
+    }
     .nav_links {
         flex-direction: row;
         justify-content: space-around;
@@ -107,7 +111,7 @@ a {
         border: 2px solid #45ADDD; 
         flex-basis: 250px;
     }
-    #gallery {
+    #gallery, .gallery {
         display: none;
     }
     .card > ul li:nth-child(odd)::before, .card > ul li:nth-child(even)::after {
